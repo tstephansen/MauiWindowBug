@@ -4,18 +4,12 @@
 Welcome to your new app.
 
 <button @onclick="OpenSecondWindow" style="margin-top: 8px;">Open Second Window</button>
-<button @onclick="ExitApp" style="margin-top: 8px;margin-bottom:8px;">Exit App</button>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
 @code {
     private void OpenSecondWindow()
     {
-        Application.Current.OpenWindow(new Window(new SecondPage()));
+        Application.Current?.OpenWindow(new Window(new SecondPage()));
     }
-
-    private void ExitApp()
-    {
-        Environment.Exit(1);
-    } 
 }
